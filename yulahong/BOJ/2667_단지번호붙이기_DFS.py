@@ -1,9 +1,9 @@
-# # 지도의 크기 = N > 이차원 배열 리스트를 통해 지도 만들기
-# 1은 집이 있는 곳 > 탐색할 대상 > dfs 변수 설정
-# 탐색 어떻게? > 델타
-# 1이 연결되어 있는 곳을 찾아 
-# 0은 없는 곳
-# 연결이 끊기면 ans += 1
+# 내가 해야할 일
+# 변수 설정
+# 
+
+
+
 N = int(input())
 arr = [list(map(int, input())) for _ in range(N)]
 visited = [[0]*N for _ in range(N)]
@@ -30,7 +30,7 @@ for i in range(N):
     for j in range(N):
         if arr[i][j] == 1 and visited[i][j] != True:
             ans_list.append(dfs(i, j))
-
+            
 print(len(ans_list))
 for a in sorted(ans_list):
     print(a)
