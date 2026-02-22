@@ -13,7 +13,4 @@ while len(card_lists) > 1:
     card_lists.popleft()
     card_lists.append(card_lists.popleft())
 
-    # x = card_lists.popleft()
-    # card_lists.append(x)
-
 print(card_lists[0])
