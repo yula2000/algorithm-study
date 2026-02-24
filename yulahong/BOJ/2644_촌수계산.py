@@ -27,11 +27,11 @@ def bfs(node):
         cn = q.popleft()
 
         if cn == person2:
-            return visited[cr] - 1
+            return visited[cn] - 1
 
-        for i in adj[node]:
+        for i in adj[cn]:
             if visited[i] == 0:
-                visited[i] = visited[node] + 1
+                visited[i] = visited[cn] + 1
                 q.append(i)
 
     return -1
