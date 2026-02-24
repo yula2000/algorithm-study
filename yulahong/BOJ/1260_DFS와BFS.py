@@ -3,6 +3,7 @@
 # 방문할 점 없는 경우 종료
 # 간선 양방향
 # 첫줄에 dfs 다음줄에 bfs 결과 출력
+
 # 변수
 # 첫줄: N = 정점의 개수, M = 간선의 개수, V = 탐색을 시작할 정점의 번호
 # M개의 줄에 간선 연결하는 두 정점 번호 주어짐 > for 문으로 M번 돌기
@@ -51,3 +52,10 @@ print()
 bfs(V)
 
 
+N, M, V = map(int, input().split())
+
+graph = [[] for _ in range(N+1)]
+
+for _ in range(M):
+    a, b = map(int, input().split())
+    graph[a].append(b)

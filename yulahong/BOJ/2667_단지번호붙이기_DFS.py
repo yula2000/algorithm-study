@@ -8,6 +8,8 @@
 # 구해야하는 것
 # 단지의 총 개수, 단지안에 있는 아파트 수 구하기
 
+# 변수 설정
+# 
 
 
 
@@ -47,10 +49,39 @@ for i in range(N):
             
 print(len(ans_list)) #ans_list의 길이는 단지 수
 for a in sorted(ans_list): #아파트 수 오름차순 정렬
+arr = [list(map(int, input())) for _ in range(N)]
+visited = [[0]*N for _ in range(N)]
+
+
+dr = [-1, 0, 1, 0]
+dc = [0, 1, 0, -1]
+
+def dfs(r, c):#r,c는 좌표의 위치
+    visited[r][c] = True #방문 도장
+    count = 1
+
+    for dir in range(4):
+        nr = r + dr[dir]
+        nc = c + dc[dir]
+        # 조건: nr과 nc가 범위 안에 있고 nr과 nc가 1일 때 답에 추가
+        if 0 <= nr < N and 0 <= nc < N and arr[nr][nc] == 1 and visited[nr][nc] != True:
+            count += dfs(nr, nc)
+        
+    return count
+
+ans_list = []
+for i in range(N):
+    for j in range(N):
+        if arr[i][j] == 1 and visited[i][j] != True:
+            ans_list.append(dfs(i, j))
+            
+print(len(ans_list))
+for a in sorted(ans_list):
     print(a)
 
 
 
+        #ans리스트에 아파트 수 리턴하고 ans의 길이 구하면 답!
 
 
 
