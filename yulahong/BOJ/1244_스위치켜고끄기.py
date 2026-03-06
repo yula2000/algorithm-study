@@ -16,9 +16,6 @@ for _ in range(students_num):
     a, b = map(int, input().split()) #a =  학생 성별 b = 학생이 받은 번호
     students_info.append((a, b))
 
-
-
-
 #로직
 # 학생 리스트 인덱스 0번에 3추가 > insert(0,3) 사용
 new_switch = [3] + switch
@@ -38,6 +35,8 @@ for i in students_info:
                 new_switch[idx] = 1
             else:
                 new_switch[idx] = 0
+
+            # new_switch[idx] = 1 - new_switch[idx]
     
     # #여학생일 때 i[0] == 2
     else:
@@ -75,3 +74,6 @@ else:
 
 for i in range(row_cnt):
     print(*ans[20*i:20*i+20])
+
+# for i in range(0, len(a), 20):
+#     print(*a[i:i+20])
