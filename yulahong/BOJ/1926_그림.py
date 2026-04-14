@@ -12,7 +12,7 @@ dc = [0, 0, -1, 1]
 def bfs(r, c):
     q = deque([(r, c)])
 
-    visited[r][c] = 1
+    # visited[r][c] = 1
     size = 0
 
     while q:
